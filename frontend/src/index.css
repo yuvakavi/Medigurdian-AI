@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   THEME TOKENS
+   Lavender is the primary identity. White is the primary
+   content surface; lavender is used for accents and pale
+   washes. Light is the default, `dark` is toggled from
+   Settings and persisted in localStorage.
+   ========================================================= */
+
+:root {
+  --bg: #f7f4fc;
+  --surface: #ffffff;
+  --surface-muted: #fbf9fe;
+  --surface-sunken: #eee8f7;
+  --border: #e7e1ef;
+  --text: #292536;
+  --text-soft: #4a4359;
+  --text-muted: #777184;
+  --text-faint: #9b95a8;
+
+  --lavender: #8b7bb5;
+  --lavender-deep: #6f5a98;
+  --lavender-pale: #f7f4fc;
+  --lavender-surface: #eee8f7;
+
+  --success: #43765a;
+  --warning: #a87422;
+  --danger: #b94444;
+
+  --sidebar-bg: #ffffff;
+  --sidebar-border: #e7e1ef;
+  --sidebar-text: #6f6879;
+  --sidebar-text-active: #493b67;
+  --focus-ring: rgba(139, 123, 181, 0.3);
+}
+
+.dark {
+  --bg: #16131e;
+  --surface: #201b2b;
+  --surface-muted: #251f32;
+  --surface-sunken: #2c253b;
+  --border: #382f49;
+  --text: #f4f1f9;
+  --text-soft: #d9d2e6;
+  --text-muted: #aaa2b9;
+  --text-faint: #847b95;
+
+  --sidebar-bg: #1c1826;
+  --sidebar-border: #332b43;
+  --sidebar-text: #b8b0c8;
+  --sidebar-text-active: #f4f1f9;
+  --focus-ring: rgba(184, 169, 212, 0.32);
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--lavender);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: #e7dff5;
+    color: #382c50;
+  }
+
+  .dark ::selection {
+    background: #493b67;
+    color: #ffffff;
+  }
+
+  /* Inputs share one visible focus treatment. */
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--lavender);
+    outline-offset: 1px;
+  }
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+@layer utilities {
+  .scrollbar-slim::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-thumb {
+    background: #d6cbe8;
+    border-radius: 999px;
+  }
+
+  .dark .scrollbar-slim::-webkit-scrollbar-thumb {
+    background: #493b67;
+  }
+
+  /* A very light lavender wash for page hero areas. */
+  .surface-wash {
+    background-color: var(--surface);
+    background-image: linear-gradient(
+      135deg,
+      rgba(238, 232, 247, 0.7) 0%,
+      rgba(255, 255, 255, 0) 58%
+    );
+  }
+
+  .dark .surface-wash {
+    background-image: linear-gradient(
+      135deg,
+      rgba(73, 59, 103, 0.35) 0%,
+      rgba(32, 27, 43, 0) 58%
+    );
+  }
+}

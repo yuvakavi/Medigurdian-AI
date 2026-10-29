@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Medigurdian AI">
+  <rect width="32" height="32" rx="9" fill="#6F5A98"/>
+  <path d="M16 24s-7-4.2-7-9.2A3.9 3.9 0 0 1 16 12a3.9 3.9 0 0 1 7 2.8c0 5-7 9.2-7 9.2Z" fill="#fff"/>
+  <path d="M9.5 16.5h4l1.4-2.7 2.4 5.1 1.5-2.4h3.7" fill="none" stroke="#8B7BB5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
